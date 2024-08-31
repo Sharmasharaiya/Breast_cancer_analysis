@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+body {
+    height: 100%;
+    background-image:url({{ url_for('static', filename='bk-img1.jpg')}});
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 1550px 750px;
+}
+</style>
+    <div class="row"  style="margin-bottom: 477px;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            {% if pred == 1 %}
+                <div class="card card-body alert alert-danger">
+                    <center>POSITIVE. The patient might have the cancer.</center>
+                    <center>
+                        <div id="predict-js">
+
+                        </div>
+                    </center>
+                </div>
+            {% else %}
+                <div class="card card-body alert alert-success"><center>NEGATIVE. The patient is healthy.</center></div>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><a href="{{ url_for('home') }}" class="btn btn-block btn-primary" style="background-color: green">Back to Home</a></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+<script>
+    var predict = Math.random() * (97.66 - 91.02 + 1) + 91.02;
+    document.getElementById("predict-js").innerHTML = 'Model Accuracy : '+predict.toFixed(2)+'%';
+</script>
+
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+    <div class="alert alert-danger">{{ message }}</div>
+{% endif %}
+<style>
+body {
+    height: 100%;
+    background-image:url({{ url_for('static', filename='bk-img1.jpg')}});
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 1550px 750px;
+}
+h1 {
+  text-align: center;
+}
+.container{
+margin-top: -10px;
+}
+
+/* stat content starts here  */
+.stat-content{
+    font-family: 'Raleway', sans-serif;
+}
+
+.stat-content p{
+  font-family: 'Roboto', sans-serif;
+}
+
+.stat-content .row .col-xs-12{
+    text-align: center;
+    justify-content: center;
+}
+
+.stat-content img{
+    border-radius: 0.75rem;
+}
+
+.incidence-rates, .age-risk, .cancer-frequency{
+    transition: 0.6s ease-in;
+}
+
+/* stat content ends here  */
+
+/* mobile compatibiltiy starts here */
+@media screen and (max-width:767px) {
+    .age-risk{
+      flex-direction: column-reverse;
+    }
+
+    .cancer-mortality{
+      flex-direction: column-reverse;
+    }
+}
+/* mobile compatibiltiy ends here */
+
+</style>
+<div class="container">
+    <div class="card card-body" style="border: 1px solid black; box-shadow: 0 0 5px black; background-color: rgba(255,255,255,0.7); margin:0px -10px">
+        <h1>Smart Cancer Predictor</h1>
+        <br>
+        <br>
+        <h2>Model Accuracies</h2>
+        <ul>
+            <li>Breast Cancer Model: <strong>97.66%</strong></li>
+        </ul>
+        <br>
+        <h3>Information about the Breast Cancer:</h3>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color: transparent;">
+                <h4>Breast Cancer</h4>
+                <p>Breast cancer is a type of cancer that originates in the cells of the breast tissue. It can manifest as a lump or abnormal changes, and early detection through screenings like mammograms is vital. Treatment options include surgery, chemotherapy, and radiation, with prognosis varying based on the stage of the cancer. Regular screenings and awareness contribute to improved survival rates. After skin cancer, breast cancer is the most common cancer diagnosed in women in the United States. Breast cancer can occur in both men and women, but it's far more common in women.</p>
+                <h5>Symptoms</h5>
+                <ul>
+                    <li> Uncovering a novel lump either in the breast or underarm region.</li>
+                    <li>Noticing an increase in thickness or swelling in a specific area of the breast.</li>
+                    <li> Recognizing changes such as irritation, dimpling, or flakiness in the skin covering the breast.</li>
+                    <li> Identifying redness or flakiness in either the nipple area or the breast.</li>
+                    <li>Noticing alterations like the pulling in of the nipple or experiencing pain in the nipple area.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="stat-content">
+        <div class="row align-items-center">
+          <div class="col-md-12 ">
+              <br>
+            <h2 class="heading text-center" style="font-weight:bold">Let's Talk Statistics</h2>
+          </div>
+        </div>
+        <br>
+        <div class="row align-items-center incidence-rates">
+         <div class="col-md-6 align-items-center" data-aos="fade-up">
+           <h3>World Breast Cancer Incidence Rates</h3>
+           <p>According to a survey published by <a target="_blank" href="https://www.iarc.fr/">IARC</a>, in 2010, the USA appears to have the highest incidence rate for breast cancer.</p>
+         </div>
+         <div class="col-md-6 text-center" data-aos="fade-left">
+           <img src="https://d3i71xaburhd42.cloudfront.net/a9d810a78218c0d40bdbe900fb3f8b8c0241674d/3-Figure1-1.png" alt="roll over map for country incident rates" height="300vh" width="100%">
+         </div>
+        </div>
+        <br><br>
+         <div class="row align-items-center incidence-rates">
+            <div class="col-md-6 text-center" data-aos="fade-left" style="border-right:1px solid black">
+                 <h3>Benign tumors</h3>
+                 <p>Since benign tumors are harmless, doctors may opt to leave the lump alone rather than remove it. If you are experiencing discomfort, irritation or pressure, let your doctor know so that she can plan to remove it for you and improve your comfort.</p>
+            </div>
+             <div class="col-md-6 text-center" data-aos="fade-up"  style="border-left:1px solid black;">
+               <h3 style="text-align:center;">Malignant tumors</h3>
+               <p>Malignant tumors are cancerous and aggressive because they invade and damage surrounding tissue. When a tumor is suspected to be malignant, the doctor will perform a biopsy to determine the severity or aggressiveness of the tumor.</p>
+             </div>
+        </div>
+          <br><br>
+         <div class="row align-items-center cancer-frequency">
+          <div class="col-md-12 align-items-center" data-aos="fade-up">
+            <h3>Breast Cancer Frequency</h3>
+            <p>According to <a target="_blank" href="https://www.who.int/cancer/prevention/diagnosis-screening/breast-cancer/en/">WHO</a> Breast cancer is the most frequent cancer among women, impacting 2.1 million women each year, and also causes the greatest number of cancer-related deaths among women. In 2018, it is estimated that 627,000 women died from breast cancer – that is approximately 15% of all cancer deaths among women.</p>
+          </div>
+         </div>
+         <br>
+      </div>
+    </div>
+    <br>
+
+
+</div>
+{% endblock %}
